@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-route::get('/',[HomeController::class,'index'])->name("dashboard");
+route::get('/',[HomeController::class,'index'])->name("dashboard")->middleware('auth');
 route::get('/login',[HomeController::class,'handleLogin'])->name("login");
+route::post('/login',[UserController::class,'LoginUser'])->name("loginuser");
+
 Route::get('/register',[HomeController::class,'handleSignup'])->name('register');
 Route::post('/register',[UserController::class,'handleRegister'])->name('register');
+Route::get('/logout',[UserController::class,'logout'])->name('logout');
+
 
 

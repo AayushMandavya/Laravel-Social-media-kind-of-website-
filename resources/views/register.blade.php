@@ -1,8 +1,14 @@
 @extends('layout.app')
 
 @section('content')
-<div class="mt-5">
-    <h1>Register</h1>
+<div class="container" style="height: 90%">
+<div class="row d-flex justify-content-center align-items-center h-100">
+<div class="col-md-5 mt-5">
+   
+<div class="box shadow p-4">
+
+<h1 class="text-center">Register</h1>
+    
 <form class="mt-5" action="{{route('register')}}" method="POST">
     @csrf
 <div class="mb-3">
@@ -32,5 +38,9 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+</div>
+</div>
+</div>
 </div>
 @endsection

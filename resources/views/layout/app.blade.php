@@ -16,15 +16,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @auth
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
+          <a class="nav-link active" aria-current="page" href="/">
+            {{auth()->user()->name}}
+          </a>
         </li>
+        @endauth
+        @guest
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/register">Register</a>
         </li>
+        @endguest
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
